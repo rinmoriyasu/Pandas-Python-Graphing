@@ -5,9 +5,10 @@ import pandas as pd
 
 file = pd.read_excel("distillation_curves.xlsx")
 
+#x-axes
 x = file['Fractions']
 
-#all y-axis
+#all y-axes
 light_crude = file['Light Crude']
 medium_crude = file['Medium Crude']
 heavy_crude = file['Heavy Crude']

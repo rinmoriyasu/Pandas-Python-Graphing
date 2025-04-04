@@ -1,14 +1,14 @@
 import scipy
 import matplotlib.pyplot as plt
 import numpy as np
-import distill_curve as dc
+import my_data as dc
 import pandas as pd
 
 
 
 fig, ax = plt.subplots()
 
-#plotter
+#plotter 'label' should be whatever column name is in the original .csv file. Needs to also be changed in my_data.py
 plt.plot(dc.x, dc.light_crude, ls = '-.', color = '#9932CC', linewidth = '2', label = 'Light Crude')
 plt.plot(dc.x, dc.medium_crude, ls = '-.', color = '#FF8C00', linewidth = '2', label = 'Medium Crude')
 plt.plot(dc.x, dc.heavy_crude, ls = '-.', color = '#008080', linewidth = '2', label = 'Heavy Crude')
@@ -20,7 +20,7 @@ plt.plot(dc.x, dc.jet_fuel, ls = '--', color = '#F0E68C', linewidth = '2', label
 plt.plot(dc.x, dc.diesel, ls = '--', color = '#E9967A', linewidth = '2', label = 'Diesel')
 plt.plot(dc.x, dc.gasoline, ls = '-.', color = '#DEB887', linewidth = '2', label = 'Gasoline')
 
-
+#This adds an onclick event to the plot shown by plt.show()
 def onclick(event):
     print(f"""
 
@@ -38,7 +38,7 @@ cid = fig.canvas.mpl_connect("button_press_event", onclick)
 plt.xlabel("Distillation Fractions")
 plt.ylabel("Temperatures (°C):")
 plt.legend(frameon = False)
-plt.savefig('Generated_Files/distillation_curve.pdf')
+plt.savefig('distillation_curve.pdf') #rename this to whatever your outfile should be.
 #show
 plt.show()
 
